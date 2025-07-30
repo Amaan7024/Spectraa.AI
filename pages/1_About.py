@@ -145,25 +145,13 @@ st.markdown("""
 <li>Firstly Upload <b>spectra files</b> for both Target Present and Target Absent classes, i.e., upload some spectra in which the target is present and some in which spectra is absent.</li>
 <li>The data can be in .csv or.txt format. In each section you can upload a maximum of 150 files. More than 100 files in each section are preferred for better results.</li>
 <li>Click <b>Train Model</b> — The model gets traind  and reports accuracy each epoch.It will run for 600 epochs.After training, a message will be displayed indicating that the model is trained.</li>
-<li>Then, in step 2 ,Upload a new test spectrum for prediction. You will see a visual of the test spectrum you are checking.</li>
-<li>Get results with <b>confidence level</b> and <b>uncertainty alerts</b>.</li>
+<li>Now, In step 2 ,Upload a new test spectrum for prediction. You will see a visual of the test spectrum you are checking.</li>
+<li>Get results with <b>confidence level</b>.</li>
 </ol>
 </div>
 """, unsafe_allow_html=True)
 
-# New Additions
-st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("### 🚀 What's New")
-st.markdown("""
-<div class='highlight-box'>
-<ul>
-<li>🧠 <b>Uncertainty-based decision support</b> — warns user if model is unsure.</li>
-<li>📈 <b>Live training plots</b> of accuracy vs. epochs.</li>
-<li>💾 <b>Model encrypted</b> with secure .so/.pyd deployment — protecting IP.</li>
-<li>🧩 Modular pages (Home, About, Team, Train) for seamless UX.</li>
-</ul>
-</div>
-""", unsafe_allow_html=True)
+
 
 # Acknowledgements
 st.markdown("<hr>", unsafe_allow_html=True)
