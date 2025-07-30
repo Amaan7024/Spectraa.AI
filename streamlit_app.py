@@ -248,7 +248,7 @@ def register():
 
 def login():
     st.markdown("---")
-    st.markdown("## 🔐 Login to Spectra.AI")
+    st.markdown("## 🔐 Login.If new, click on Register")
 
     with st.form("login_form", clear_on_submit=False):
         st.markdown("### Welcome Back 👋")
