@@ -101,7 +101,7 @@ st.markdown("""
 
 # About description
 st.markdown("""
-Spectra.AI is an intelligent, deep learning–powered web application designed for rapid analysis and classification of **spectral data**.  
+Spectra.AI is an intelligent, machine learning–powered web application designed for rapid analysis and classification of **spectral data**.  
 It empowers researchers, students, and analysts to detect the presence or absence of a target from spectral inputs — without needing coding or ML expertise.
 """)
 
