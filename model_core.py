@@ -11,7 +11,7 @@ import torch.optim as optim
 
 # RamanNet definition
 class RamanNet(nn.Module):
-    def __init__(self, input_length=2000, window_size=50, step=25, n1=32, n2=256, embedding_dim=128, num_classes=2):
+    def __init__(self, input_length=1000, window_size=50, step=25, n1=32, n2=256, embedding_dim=128, num_classes=2):
         super(RamanNet, self).__init__()
         self.window_size = window_size
         self.step = step
@@ -76,7 +76,7 @@ def train_model(X_np, y_np, epochs=100, progress_callback=None):
     X_train_tensor = torch.tensor(X_np, dtype=torch.float32)
     y_train_tensor = torch.tensor(y_np, dtype=torch.long)
 
-    model = RamanNet(input_length=3000)
+    model = RamanNet(input_length=1000)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
