@@ -179,7 +179,7 @@ st.markdown(
     .header {
         text-align: center;
         font-size:40px;
-        color: #0072B5;
+        color: #000000;
         font-weight: bold;
     }
     .subheader {
