@@ -130,7 +130,6 @@ st.markdown("""
 <li>📡 Live model training with accuracy and confidence updates.</li>
 <li>📂 Upload & classify new spectra with uncertainty warnings.</li>
 <li>🧊 Glassmorphism UI for clean, modern experience.</li>
-<li>📊 Download model summary and predictions.</li>
 <li>📁 Accepts CSV, TXT files with automatic parsing.</li>
 </ul>
 </div>
