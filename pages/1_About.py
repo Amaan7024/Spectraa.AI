@@ -125,12 +125,12 @@ st.markdown("### 🌟 Key Features")
 st.markdown("""
 <div class='highlight-box'>
 <ul>
-<li>🔐 Secure login & registration system.</li>
-<li>⚙️ Custom deep learning model optimized for 1D signals.</li>
-<li>📡 Live model training with accuracy and confidence updates.</li>
-<li>📂 Upload & classify new spectra with uncertainty warnings.</li>
-<li>🧊 Glassmorphism UI for clean, modern experience.</li>
-<li>📁 Accepts CSV, TXT files with automatic parsing.</li>
+<li>Secure login & registration system.</li>
+<li>Custom deep learning model optimized for 1D signals.</li>
+<li>Live model training with accuracy and confidence updates.</li>
+<li>Upload & classify new spectra with uncertainty warnings.</li>
+<li>Glassmorphism UI for clean, modern experience.</li>
+<li>Accepts CSV, TXT files with automatic parsing.</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
