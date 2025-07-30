@@ -113,6 +113,7 @@ st.markdown("""
 <ul>
 <li>Upload your labeled data and instantly train an advanced model.</li>
 <li>Supports <b>binary classification</b> with real-time feedback and uncertainty detection.</li>
+<li>Analyze any spectra easily within seconds.</li>
 <li>No need to write code — fully automated UI-driven system.</li>
 </ul>
 </div>
@@ -125,7 +126,7 @@ st.markdown("""
 <div class='highlight-box'>
 <ul>
 <li>🔐 Secure login & registration system.</li>
-<li>⚙️ Custom deep learning model (RamanNet-based) optimized for 1D signals.</li>
+<li>⚙️ Custom deep learning model optimized for 1D signals.</li>
 <li>📡 Live model training with accuracy and confidence updates.</li>
 <li>📂 Upload & classify new spectra with uncertainty warnings.</li>
 <li>🧊 Glassmorphism UI for clean, modern experience.</li>
@@ -141,9 +142,10 @@ st.markdown("### 🧪 How It Works")
 st.markdown("""
 <div class='highlight-box'>
 <ol>
-<li>Upload <b>spectra files</b> for both Target Present and Target Absent classes.</li>
-<li>Click <b>Train Model</b> — RamanNet trains and reports accuracy each epoch.</li>
-<li>Upload a new test spectrum for prediction.</li>
+<li>Firstly Upload <b>spectra files</b> for both Target Present and Target Absent classes, i.e., upload some spectra in which the target is present and some in which spectra is absent.</li>
+<li>The data can be in .csv or.txt format. In each section you can upload a maximum of 150 files. More than 100 files in each section are preferred for better results.</li>
+<li>Click <b>Train Model</b> — The model gets traind  and reports accuracy each epoch.It will run for 600 epochs.After training, a message will be displayed indicating that the model is trained.</li>
+<li>Then, in step 2 ,Upload a new test spectrum for prediction. You will see a visual of the test spectrum you are checking.</li>
 <li>Get results with <b>confidence level</b> and <b>uncertainty alerts</b>.</li>
 </ol>
 </div>
