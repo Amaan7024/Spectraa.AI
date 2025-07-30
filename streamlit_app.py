@@ -70,7 +70,7 @@ st.markdown(
 from PIL import Image
 
 # Load the logo image
-logo = Image.open("INST k.png")  # replace with your filename
+logo = Image.open("LDMD.png")  # replace with your filename
 
 # Display logo and title side by side
 col1, col2 = st.columns([1, 5])
