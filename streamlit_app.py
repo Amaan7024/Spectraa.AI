@@ -76,9 +76,6 @@ col1, col2 = st.columns([1, 5])
 with col1:
     st.image(logo, width=200) 
 
-# Render banner image using Streamlit with custom HTML
-st.markdown(f"<img class='banner' src='data:image/png;base64,{st.image(banner_image, use_column_width=True, output_format='PNG').image_to_url()}'/>", unsafe_allow_html=True)
-
 
 st.markdown("""
 <style>
