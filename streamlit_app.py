@@ -400,7 +400,8 @@ y = []
 if present_files:
     st.success(f"✅ Uploaded {len(present_files)} 'Present' files")
     for file in present_files:
-        df = pd.read_csv(file, sep='\t', header=None)
+        df = pd.read_csv(file, header=None)
+
 
         processed = preprocess_spectrum(df)
         if processed is not None:
@@ -413,7 +414,8 @@ if present_files:
 if absent_files:
     st.success(f"✅ Uploaded {len(absent_files)} 'Absent' files")
     for file in absent_files:
-        df = pd.read_csv(file, sep='\t', header=None)
+        df = pd.read_csv(file, header=None)
+
 
         processed = preprocess_spectrum(df)
         if processed is not None:
@@ -466,7 +468,8 @@ st.markdown("""
 test_file = st.file_uploader("📄 Upload test spectrum to classify", type=["csv", "txt"], key="test")
 
 if test_file and "model" in st.session_state:
-    df = pd.read_csv(file, sep='\t', header=None)
+   df = pd.read_csv(file, header=None)
+
 
 
     # Optional: plot the test spectrum
