@@ -68,30 +68,13 @@ st.markdown(
 
 
 from PIL import Image
-from PIL import Image
-import streamlit as st
+# Load the logo image
+logo = Image.open("LDMD.png")  # replace with your filename
 
-# Load the banner image
-banner_image = Image.open("LDMD.png")
-
-# Display the image as a full-width banner
-st.markdown(
-    """
-    <style>
-    .banner {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        max-height: 200px;
-        object-fit: cover;
-        border-radius: 12px;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# Display logo and title side by side
+col1, col2 = st.columns([1, 5])
+with col1:
+    st.image(logo, width=200) 
 
 # Render banner image using Streamlit with custom HTML
 st.markdown(f"<img class='banner' src='data:image/png;base64,{st.image(banner_image, use_column_width=True, output_format='PNG').image_to_url()}'/>", unsafe_allow_html=True)
