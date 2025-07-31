@@ -70,7 +70,7 @@ st.markdown(
 from PIL import Image
 
 # Load the logo image
-logo = Image.open("LDMD.png")  # replace with your filename
+logo = Image.open("INST k.png")  # replace with your filename
 
 # Display logo and title side by side
 col1, col2 = st.columns([1, 5])
@@ -179,7 +179,7 @@ st.markdown(
     .header {
         text-align: center;
         font-size:40px;
-        color: #000000;
+        color: #0072B5;
         font-weight: bold;
     }
     .subheader {
@@ -248,7 +248,7 @@ def register():
 
 def login():
     st.markdown("---")
-    st.markdown("## 🔐 Login.If new, click on Register")
+    st.markdown("## 🔐 Login to Spectra.AI")
 
     with st.form("login_form", clear_on_submit=False):
         st.markdown("### Welcome Back 👋")
@@ -400,11 +400,9 @@ y = []
 if present_files:
     st.success(f"✅ Uploaded {len(present_files)} 'Present' files")
     for file in present_files:
-     df = pd.read_csv(file, header=None)
-
-
-      processed = preprocess_spectrum(df)
-       if processed is not None:
+        df = pd.read_csv(file, header=None)
+        processed = preprocess_spectrum(df)
+        if processed is not None:
             X.append(processed)
             y.append(1)
 
@@ -414,9 +412,7 @@ if present_files:
 if absent_files:
     st.success(f"✅ Uploaded {len(absent_files)} 'Absent' files")
     for file in absent_files:
-     df = pd.read_csv(file, header=None)
-
-
+        df = pd.read_csv(file, header=None)
         processed = preprocess_spectrum(df)
         if processed is not None:
             X.append(processed)
@@ -468,9 +464,7 @@ st.markdown("""
 test_file = st.file_uploader("📄 Upload test spectrum to classify", type=["csv", "txt"], key="test")
 
 if test_file and "model" in st.session_state:
-    df = pd.read_csv(file, header=None)
-
-
+    df = pd.read_csv(test_file, header=None)
 
     # Optional: plot the test spectrum
     st.markdown("#### 📈 Uploaded Test Spectrum")
@@ -533,3 +527,4 @@ if test_file and "model" in st.session_state:
                 <strong>❌ Target Not Detected:</strong> The target is <b>absent</b> in the sample with <b>{conf:.2%}</b> confidence.
             </div>
         """, unsafe_allow_html=True)
+
