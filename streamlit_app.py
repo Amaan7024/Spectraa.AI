@@ -403,8 +403,8 @@ if present_files:
      df = pd.read_csv(file, header=None)
 
 
-     processed = preprocess_spectrum(df)
-        if processed is not None:
+      processed = preprocess_spectrum(df)
+       if processed is not None:
             X.append(processed)
             y.append(1)
 
