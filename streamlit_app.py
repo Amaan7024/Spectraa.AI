@@ -373,8 +373,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-present_files = st.file_uploader("📂 Upload spectra where TARGET is PRESENT (label = 1)", type=["csv", "txt"], accept_multiple_files=True)
-absent_files = st.file_uploader("📂 Upload spectra where TARGET is ABSENT (label = 0)", type=["csv", "txt"], accept_multiple_files=True)
+present_files = st.file_uploader("📂 Upload spectra where TARGET is PRESENT (label = 1)", type=["csv"], accept_multiple_files=True)
+absent_files = st.file_uploader("📂 Upload spectra where TARGET is ABSENT (label = 0)", type=["csv"], accept_multiple_files=True)
 
 MAX_FILES_PER_LABEL = 150
 
