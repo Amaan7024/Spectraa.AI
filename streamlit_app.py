@@ -179,7 +179,7 @@ st.markdown(
     .header {
         text-align: center;
         font-size:40px;
-        color: #0072B5;
+        color: #000000;
         font-weight: bold;
     }
     .subheader {
@@ -248,7 +248,7 @@ def register():
 
 def login():
     st.markdown("---")
-    st.markdown("## 🔐 Login to Spectra.AI")
+    st.markdown("## 🔐 Login.If new, Register!")
 
     with st.form("login_form", clear_on_submit=False):
         st.markdown("### Welcome Back 👋")
