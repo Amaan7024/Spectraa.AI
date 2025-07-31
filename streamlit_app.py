@@ -404,7 +404,7 @@ if present_files:
 
 
      processed = preprocess_spectrum(df)
-        if processed is not None:
+      if processed is not None:
             X.append(processed)
             y.append(1)
 
