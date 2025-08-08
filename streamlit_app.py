@@ -223,7 +223,7 @@ def register():
     st.markdown("## Register New User")
 
     with st.form("register_form", clear_on_submit=False):
-        st.markdown("### Create New Account")
+        
 
         new_username = st.text_input("Username", placeholder="Enter a unique username")
         new_email = st.text_input("Email Address", placeholder="Enter your email")
