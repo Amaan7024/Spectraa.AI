@@ -101,8 +101,9 @@ st.markdown("""
 
 # About description
 st.markdown("""
-Spectra.AI is an intelligent, machine learning–powered web application designed for rapid analysis and classification of **spectral data**.  
-It empowers researchers, students, and analysts to detect the presence or absence of a target from spectral inputs — without needing coding or ML expertise.
+Spectral.AI is an advanced machine learning application purpose-built to train on raw spectral data and accurately differentiate even the most complex and closely resembling spectra. By leveraging state-of-the-art algorithms, it can identify analytes from minute trace-level spectral signatures with exceptional accuracy.
+Extensively validated in laboratory settings, Spectral.AI has demonstrated outstanding performance in analyzing Raman signals, reliably distinguishing target molecular signatures within highly complex systems. It has been successfully optimized for biomarkers such as PCT, IL-3, and CRP, achieving detection limits down to ~100 fM concentrations.
+Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation.
 """)
 
 # Why Spectra.AI
