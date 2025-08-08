@@ -83,6 +83,24 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+# ===== FULL-WIDTH HEADER BANNER =====
+st.markdown(
+    """
+    <style>
+    .full-width-banner {
+        width: 100vw;
+        height: 180px;
+        background-image: url('Spectraa.AI/LDMD.png'); 
+        background-size: cover;
+        background-position: center;
+        margin-left: -3rem; /* removes Streamlit page padding */
+        margin-top: -1rem;
+    }
+    </style>
+    <div class="full-width-banner"></div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
