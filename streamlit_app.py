@@ -29,10 +29,7 @@ from model_core import preprocess_spectrum, train_model, predict_spectrum
 
 import streamlit as st
 
-import streamlit as st
 
-# Change app title (appears in sidebar)
-st.set_page_config(page_title="Home", page_icon="🏠", layout="wide")
 
 # Global modern background with blur and polish
 st.markdown(
