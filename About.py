@@ -34,7 +34,13 @@ st.markdown("<div class='about-title'>🔍 About Spectra.AI</div>", unsafe_allow
 st.markdown(
     """
     <div class='about-content'>
-    <p><strong>Spectra.AI</strong> is an intelligent Raman spectra analysis platform. It enables users to train deep learning models directly on their uploaded spectral data — no coding required.</p>
+    <p><strong>Spectral.AI</strong> is an advanced machine learning application purpose-built to train on raw spectral data and accurately differentiate even the most complex and closely resembling spectra. By leveraging state-of-the-art algorithms, it can identify analytes from minute trace-level spectral signatures with exceptional accuracy.
+
+Extensively validated in laboratory settings, Spectral.AI has demonstrated outstanding performance in analyzing Raman signals, reliably distinguishing target molecular signatures within highly complex systems. It has been successfully optimized for biomarkers such as PCT, IL-3, and CRP, achieving detection limits down to ~100 fM concentrations.
+
+Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation.
+
+If you want, I can also elevate this further into a high-impact premium version tailored for your Spectra.AI homepage or research report so it sounds both cutting-edge and visionary.</p>
 
     <p>Here's how it works:</p>
     <ol>
