@@ -1,52 +1,147 @@
 import streamlit as st
 
-st.set_page_config(page_title="About - Spectra.AI", layout="centered")
-
 st.markdown(
     """
     <style>
-    .about-title {
-        font-size: 40px;
-        font-weight: 800;
-        text-align: center;
-        color: #3a47d5;
-        margin-top: 20px;
+    [data-testid="stSidebar"] {
+        background-color: #fff9db !important;
+        color: black !important;
     }
-    .about-content {
-        font-size: 18px;
-        text-align: justify;
-        margin: 30px auto;
-        max-width: 800px;
-        line-height: 1.8;
-        color: #333;
-        background: #ffffffcc;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+    [data-testid="stSidebar"] * {
+        color: black !important;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-st.markdown("<div class='about-title'>🔍 About Spectra.AI</div>", unsafe_allow_html=True)
 
+# --- Global Styling ---
 st.markdown(
     """
-    <div class='about-content'>
-    <p><strong>Spectral.AI</strong>is an advanced machine learning application purpose-built to train on raw spectral data and accurately differentiate even the most complex and closely resembling spectra. By leveraging state-of-the-art algorithms, it can identify analytes from minute trace-level spectral signatures with exceptional accuracy.
-Extensively validated in laboratory settings, Spectral.AI has demonstrated outstanding performance in analyzing Raman signals, reliably distinguishing target molecular signatures within highly complex systems. It has been successfully optimized for biomarkers such as PCT, IL-3, and CRP, achieving detection limits down to ~100 fM concentrations.
-Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation.</p>
-
-    <p>Here's how it works:</p>
-    <ol>
-        <li><strong>Upload Training Data:</strong> The user provides two sets of spectral files: one where the target is <b>present</b> and another where it's <b>absent</b>.</li>
-        <li><strong>Train Your Model:</strong> With a single click, Spectra.AI trains a custom RamanNet model on this data.</li>
-        <li><strong>Predict on New Data:</strong> Upload a new spectrum and the app will instantly tell whether the target is likely present or not — with confidence.</li>
-    </ol>
-
-    <p>💡 Designed for researchers, scientists, and diagnostic professionals who want quick, powerful insights from their spectral data.</p>
-    </div>
+    <style>
+    .stApp {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        background-attachment: fixed;
+        font-family: 'Segoe UI', sans-serif;
+        color: #f0f0f0;
+    }
+    .about-container {
+        background-color: rgba(255, 255, 255, 0.07);
+        padding: 2.5rem;
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        max-width: 950px;
+        margin: 2rem auto;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 15px #00c3ff;
+    }
+    h2, h3 {
+        color: #ffffff;
+        margin-top: 2rem;
+    }
+    p {
+        font-size: 16px;
+        color: #dddddd;
+        line-height: 1.6;
+        text-align: justify;
+    }
+    ul, ol {
+        font-size: 16px;
+        color: #dddddd;
+        line-height: 1.6;
+    }
+    .highlight-box {
+        background: rgba(255,255,255,0.08);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 1rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+    .highlight-box:hover {
+        transform: scale(1.02);
+    }
+    hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, #ffffff20, #ffffff60, #ffffff20);
+        margin: 2rem 0;
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
+
+# ---------- All content inside the container ----------
+st.markdown("<div class='about-container'>", unsafe_allow_html=True)
+
+st.markdown("<h1>📖 About Spectra.AI</h1>", unsafe_allow_html=True)
+
+st.markdown("""
+Spectra.AI is an intelligent, deep learning–powered web application designed for rapid analysis and classification of **a spectra**.  
+It empowers researchers, students, and analysts to detect the presence or absence of a target from spectral data — without needing coding or ML expertise.
+""")
+
+# Why Spectra.AI
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("### 🎯 Why Spectra.AI?")
+st.markdown("""
+<div class='highlight-box'>
+<ul>
+<li>With Spectra.AI, just upload your labeled data and instantly train an advanced model.</li>
+<li>The app supports <b>binary classification</b> with real-time accuracy feedback, uncertainty alerts, and result confidence.</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
+
+# Key Features
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("### 🌟 Key Features")
+st.markdown("""
+<div class='highlight-box'>
+<ul>
+<li>🔐 Secure <b>login & registration</b> system with local storage.</li>
+<li>⚙️ Custom-built deep learning model optimized for 1D signals.</li>
+<li>🧠 Live training with confidence updates at each epoch.</li>
+<li>📈 Upload & classify new test samples with interpretability.</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
+
+# How It Works
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("### 🧪 How It Works")
+st.markdown("""
+<div class='highlight-box'>
+<ol>
+<li>Upload labeled <b>spectra files</b> (Target Present & Target Absent).</li>
+<li>Click <b>Train Model</b> — RamanNet trains on uploaded data with live accuracy feedback.</li>
+<li>Upload a new spectrum for prediction.</li>
+<li>Get a result with <b>output</b>, <b>confidence level</b>, and <b>uncertainty warning</b> if needed.</li>
+</ol>
+</div>
+""", unsafe_allow_html=True)
+
+# Acknowledgements
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown("### 🙏 Acknowledgements")
+st.markdown("""
+<div class='highlight-box'>
+This project acknowledges the foundational contributions of:
+<ul>
+<li><b>RamanNet</b>: A lightweight convolutional neural network for Raman spectral classification (2022)</li>
+<li><b>Modified RamanNet</b>: An improved version with optimized architecture for enhanced detection (2025)</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
+
