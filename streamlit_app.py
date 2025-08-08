@@ -79,7 +79,7 @@ banner = Image.open("LDMDk.png")  # replace with your image filename
 st.markdown(
     f"""
     <div style="text-align:center;">
-        <img src="data:image/png;base64,{base64.b64encode(open('LDMD.png', 'rb').read()).decode()}" 
+        <img src="data:image/png;base64,{base64.b64encode(open('LDMDk.png', 'rb').read()).decode()}" 
              style="width:100%; max-height:250px; object-fit:cover; border-radius:12px;" />
     </div>
     """,
