@@ -220,7 +220,7 @@ if 'users' not in st.session_state:
 
 def register():
     st.markdown("---")
-    st.markdown("##Register New User")
+    st.markdown("## Register New User")
 
     with st.form("register_form", clear_on_submit=False):
         st.markdown("### Create New Account")
