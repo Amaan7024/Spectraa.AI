@@ -223,12 +223,12 @@ def register():
     st.markdown("## 📝 Register New User")
 
     with st.form("register_form", clear_on_submit=False):
-        st.markdown("### Create Your Spectra.AI Account")
+        st.markdown("### Create New Account")
 
         new_username = st.text_input("👤 Choose a Username", placeholder="Enter a unique username")
         new_email = st.text_input("📧 Email Address", placeholder="Enter your email")
-        new_password = st.text_input("🔒 Password", type="password", placeholder="Choose a strong password")
-        confirm_password = st.text_input("🔒 Confirm Password", type="password", placeholder="Re-enter your password")
+        new_password = st.text_input("Password", type="password", placeholder="Choose a strong password")
+        confirm_password = st.text_input("Confirm Password", type="password", placeholder="Re-enter your password")
 
         submit_register = st.form_submit_button("Register", use_container_width=True)
 
