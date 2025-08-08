@@ -251,7 +251,7 @@ def login():
     st.markdown("## Login")
 
     with st.form("login_form", clear_on_submit=False):
-        st.markdown("### Welcome Back")
+       
         st.markdown("Please enter your credentials below:")
 
         username = st.text_input("Username", placeholder="Enter your username")
