@@ -190,7 +190,7 @@ st.markdown(
     </style>
 
     <div class='header'>🔬 Spectra.AI</div>
-    <div class='subheader'>Analyze spectra to detect presence of a target</div>
+
     """,
     unsafe_allow_html=True
 )
