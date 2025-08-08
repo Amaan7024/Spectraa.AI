@@ -67,14 +67,23 @@ st.markdown(
 )
 
 
+import base64
 from PIL import Image
-# Load the logo image
-logo = Image.open("LDMD.png")  # replace with your filename
 
-# Display logo and title side by side
-col1, col2 = st.columns([1, 5])
-with col1:
-    st.image(logo, width=200) 
+# Load the banner image
+banner = Image.open("LDMD.png")  # replace with your image filename
+
+# Display as full-width header banner
+st.markdown(
+    f"""
+    <div style="text-align:center;">
+        <img src="data:image/png;base64,{base64.b64encode(open('LDMD.png', 'rb').read()).decode()}" 
+             style="width:100%; max-height:250px; object-fit:cover; border-radius:12px;" />
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 
 st.markdown("""
