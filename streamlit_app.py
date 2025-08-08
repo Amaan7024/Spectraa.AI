@@ -93,7 +93,7 @@ st.markdown(
         background-image: url('Spectraa.AI/LDMD.png'); 
         background-size: cover;
         background-position: center;
-        margin-left: -1rem; /* removes Streamlit page padding */
+        margin-left: -3rem; /* removes Streamlit page padding */
         margin-top: -1rem;
     }
     </style>
