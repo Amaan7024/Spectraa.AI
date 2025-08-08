@@ -248,14 +248,14 @@ def register():
 
 def login():
     st.markdown("---")
-    st.markdown("## 🔐 Login.If new, Register!")
+    st.markdown("## Login")
 
     with st.form("login_form", clear_on_submit=False):
-        st.markdown("### Welcome Back 👋")
+        st.markdown("### Welcome Back")
         st.markdown("Please enter your credentials below:")
 
-        username = st.text_input("👤 Username", placeholder="Enter your username")
-        password = st.text_input("🔑 Password", type="password", placeholder="Enter your password")
+        username = st.text_input("Username", placeholder="Enter your username")
+        password = st.text_input("Password", type="password", placeholder="Enter your password")
 
         submit_login = st.form_submit_button("Login", use_container_width=True)
 
