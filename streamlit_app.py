@@ -12,11 +12,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-import io
-from datetime import datetime
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
-from reportlab.lib.utils import ImageReader
 
 
 import pandas as pd
