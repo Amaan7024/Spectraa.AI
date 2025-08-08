@@ -73,7 +73,7 @@ import base64
 from PIL import Image
 
 # Load the banner image
-banner = Image.open("LDMD.png")  # replace with your image filename
+banner = Image.open("LDMDk.png")  # replace with your image filename
 
 # Display as full-width header banner
 st.markdown(
@@ -92,7 +92,7 @@ st.markdown(
     .full-width-banner {
         width: 100vw;
         height: 180px;
-        background-image: url('Spectraa.AI/LDMD.png'); 
+        background-image: url('Spectraa.AI/LDMDk.png'); 
         background-size: cover;
         background-position: center;
         margin-left: -3rem; /* removes Streamlit page padding */
