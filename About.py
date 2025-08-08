@@ -40,7 +40,7 @@ Extensively validated in laboratory settings, Spectral.AI has demonstrated outst
 
 Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation.
 
-If you want, I can also elevate this further into a high-impact premium version tailored for your Spectra.AI homepage or research report so it sounds both cutting-edge and visionary.</p>
+</p>
 
     <p>Here's how it works:</p>
     <ol>
