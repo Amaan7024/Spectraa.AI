@@ -225,8 +225,8 @@ def register():
     with st.form("register_form", clear_on_submit=False):
         st.markdown("### Create New Account")
 
-        new_username = st.text_input("👤 Choose a Username", placeholder="Enter a unique username")
-        new_email = st.text_input("📧 Email Address", placeholder="Enter your email")
+        new_username = st.text_input("Username", placeholder="Enter a unique username")
+        new_email = st.text_input("Email Address", placeholder="Enter your email")
         new_password = st.text_input("Password", type="password", placeholder="Choose a strong password")
         confirm_password = st.text_input("Confirm Password", type="password", placeholder="Re-enter your password")
 
