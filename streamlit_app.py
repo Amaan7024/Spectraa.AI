@@ -64,38 +64,6 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     result = ("Target Present" if pred == 1 else "Target Absent") + f" ({conf:.2%} confidence)"
     c.drawString(70, height - 220, result)
 
-    # --- Target Distribution Pie Chart ---
-    fig1, ax1 = plt.subplots()
-    ax1.pie([absent_count, present_count],
-            labels=[f'Absent ({absent_count})', f'Present ({present_count})'],
-            autopct='%1.1f%%')
-    ax1.set_title("Target Distribution")
-
-    buf1 = io.BytesIO()
-    fig1.savefig(buf1, format="png", bbox_inches="tight")
-    buf1.seek(0)
-    img1 = ImageReader(buf1)
-    c.drawImage(img1, 50, height - 400, width=220, height=200, preserveAspectRatio=True, mask='auto')
-    plt.close(fig1)
-
-    # --- Confidence Levels Pie Chart ---
-    low = sum(c < 0.7 for c in conf)
-    medium = sum(0.7 <= c < 0.9 for c in conf)
-    high = sum(c >= 0.9 for c in conf)
-
-    fig2, ax2 = plt.subplots()
-    ax2.pie([low, medium, high],
-            labels=[f'Low ({low})', f'Medium ({medium})', f'High ({high})'],
-            autopct='%1.1f%%')
-    ax2.set_title("Confidence Levels")
-
-    buf2 = io.BytesIO()
-    fig2.savefig(buf2, format="png", bbox_inches="tight")
-    buf2.seek(0)
-    img2 = ImageReader(buf2)
-    c.drawImage(img2, 320, height - 400, width=220, height=200, preserveAspectRatio=True, mask='auto')
-    plt.close(fig2)
-
     # Spectrum plot
     if test_fig is not None:
         img_buf = io.BytesIO()
