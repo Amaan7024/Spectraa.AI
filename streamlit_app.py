@@ -64,13 +64,20 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     result = ("Target Present" if pred == 1 else "Target Absent") + f" ({conf:.2%} confidence)"
     c.drawString(70, height - 220, result)
 
+
+    
+
+
+
     # Spectrum plot
     if test_fig is not None:
         img_buf = io.BytesIO()
         test_fig.savefig(img_buf, format="png", bbox_inches="tight")
         img_buf.seek(0)
         img = ImageReader(img_buf)
-        c.drawImage(img, 90, height - 650, width=420, height=220, preserveAspectRatio=True, mask='auto')
+        # scale to fit page
+        img_w, img_h = 420, 260
+        c.drawImage(img, 90, height - 500, width=img_w, height=img_h, preserveAspectRatio=True, mask='auto')
 
     c.save()
     buffer.seek(0)
