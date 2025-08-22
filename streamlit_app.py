@@ -32,6 +32,9 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.utils import ImageReader
 import io
 from datetime import datetime
+from datetime import datetime
+import pytz
+
 def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     buffer = io.BytesIO()
     c = canvas.Canvas(buffer, pagesize=letter)
@@ -42,6 +45,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     c.drawCentredString(width / 2, height - 50, "Spectra.AI Analysis Report")
 
     # Timestamp
+    ist = pytz.timezone("Asia/Kolkata")
     timestamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S")
     c.setFont("Helvetica", 10)
     c.drawRightString(width - 40, height - 70, f"Generated on: {timestamp}")
