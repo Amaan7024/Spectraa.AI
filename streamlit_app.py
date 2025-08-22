@@ -46,7 +46,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
     # Timestamp
     ist = pytz.timezone("Asia/Kolkata")
-    timestamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.now(pytz.utc).astimezone(ist).strftime("%Y-%m-%d %H:%M:%S")
     c.setFont("Helvetica", 10)
     c.drawRightString(width - 40, height - 70, f"Generated on: {timestamp}")
 
