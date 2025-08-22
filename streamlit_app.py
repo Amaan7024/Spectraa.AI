@@ -74,13 +74,6 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     result = ("Target Present" if pred == 1 else "Target Absent") + f" ({conf:.2%} confidence)"
     c.drawString(70, height - 220, result)
 
-
-    
-
-
-
-    
-
     c.save()
     buffer.seek(0)
     return buffer
