@@ -623,19 +623,3 @@ if test_file and "model" in st.session_state:
             </div>
         """, unsafe_allow_html=True)
 
-    # Count how many files were uploaded for training
-    present_count = len(present_files) if present_files else 0
-    absent_count  = len(absent_files)  if absent_files else 0
-
-    # 📥 Section for downloading the report
-    st.markdown("---")
-    st.subheader("📥 Download Analysis Report")
-
-    if st.button("Generate PDF"):
-        pdf_buffer = generate_pdf_report(present_count, absent_count, fig, pred, conf)
-        st.download_button(
-            label="⬇️ Download Report",
-            data=pdf_buffer,
-            file_name="spectra_report.pdf",
-            mime="application/pdf"
-        )
