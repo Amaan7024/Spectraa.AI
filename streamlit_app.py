@@ -27,6 +27,54 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from model_core import preprocess_spectrum, train_model, predict_spectrum
 
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
+import io
+from datetime import datetime
+def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
+    buffer = io.BytesIO()
+    c = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+
+    # Title
+    c.setFont("Helvetica-Bold", 18)
+    c.drawCentredString(width / 2, height - 50, "Spectra.AI Analysis Report")
+
+    # Timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    c.setFont("Helvetica", 10)
+    c.drawRightString(width - 40, height - 70, f"Generated on: {timestamp}")
+
+    # Data summary
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(50, height - 120, "Uploaded Data Summary:")
+    c.setFont("Helvetica", 12)
+    c.drawString(70, height - 140, f"Target Present Files: {present_count}")
+    c.drawString(70, height - 160, f"Target Absent Files:  {absent_count}")
+
+    # Prediction
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(50, height - 200, "Model Prediction:")
+    c.setFont("Helvetica", 12)
+    result = ("Target Present" if pred == 1 else "Target Absent") + f" ({conf:.2%} confidence)"
+    c.drawString(70, height - 220, result)
+
+    # Spectrum plot
+    if test_fig is not None:
+        img_buf = io.BytesIO()
+        test_fig.savefig(img_buf, format="png", bbox_inches="tight")
+        img_buf.seek(0)
+        img = ImageReader(img_buf)
+        # scale to fit page
+        img_w, img_h = 420, 260
+        c.drawImage(img, 90, height - 500, width=img_w, height=img_h, preserveAspectRatio=True, mask='auto')
+
+    c.save()
+    buffer.seek(0)
+    return buffer
+
+
 import streamlit as st
 
 
@@ -511,6 +559,24 @@ if test_file and "model" in st.session_state:
     # ⬇️ Secure call to model_core.pyd
     pred, conf = predict_spectrum(st.session_state["model"], df)
 
+        # Count how many files were uploaded for training
+    present_count = len(present_files) if present_files else 0
+    absent_count  = len(absent_files)  if absent_files else 0
+
+    # 📥 Section for downloading the report
+    st.markdown("---")
+    st.subheader("📥 Download Analysis Report")
+
+    if st.button("Generate PDF"):
+        pdf_buffer = generate_pdf_report(present_count, absent_count, fig, pred, conf)
+        st.download_button(
+            label="⬇️ Download Report",
+            data=pdf_buffer,
+            file_name="spectra_report.pdf",
+            mime="application/pdf"
+        )
+
+
     # ⬇️ Styled results
     if conf < 0.65:
         st.markdown(f"""
@@ -557,3 +623,19 @@ if test_file and "model" in st.session_state:
             </div>
         """, unsafe_allow_html=True)
 
+    # Count how many files were uploaded for training
+    present_count = len(present_files) if present_files else 0
+    absent_count  = len(absent_files)  if absent_files else 0
+
+    # 📥 Section for downloading the report
+    st.markdown("---")
+    st.subheader("📥 Download Analysis Report")
+
+    if st.button("Generate PDF"):
+        pdf_buffer = generate_pdf_report(present_count, absent_count, fig, pred, conf)
+        st.download_button(
+            label="⬇️ Download Report",
+            data=pdf_buffer,
+            file_name="spectra_report.pdf",
+            mime="application/pdf"
+        )
