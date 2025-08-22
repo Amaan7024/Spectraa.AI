@@ -57,6 +57,16 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     c.drawString(70, height - 140, f"Target Present Files: {present_count}")
     c.drawString(70, height - 160, f"Target Absent Files:  {absent_count}")
 
+    # Spectrum plot
+    if test_fig is not None:
+        img_buf = io.BytesIO()
+        test_fig.savefig(img_buf, format="png", bbox_inches="tight")
+        img_buf.seek(0)
+        img = ImageReader(img_buf)
+        # scale to fit page
+        img_w, img_h = 420, 260
+        c.drawImage(img, 90, height - 500, width=img_w, height=img_h, preserveAspectRatio=True, mask='auto')
+
     # Prediction
     c.setFont("Helvetica-Bold", 14)
     c.drawString(50, height - 200, "Model Prediction:")
@@ -69,15 +79,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
 
 
-    # Spectrum plot
-    if test_fig is not None:
-        img_buf = io.BytesIO()
-        test_fig.savefig(img_buf, format="png", bbox_inches="tight")
-        img_buf.seek(0)
-        img = ImageReader(img_buf)
-        # scale to fit page
-        img_w, img_h = 420, 260
-        c.drawImage(img, 90, height - 500, width=img_w, height=img_h, preserveAspectRatio=True, mask='auto')
+    
 
     c.save()
     buffer.seek(0)
