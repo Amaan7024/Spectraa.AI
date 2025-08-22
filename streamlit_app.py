@@ -65,27 +65,27 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     c.drawString(70, height - 220, result)
 
     # --- Target Distribution Pie Chart ---
-present = y_true.count(1)
-absent = y_true.count(0)
-fig1, ax1 = plt.subplots()
-ax1.pie([absent, present],
-        labels=[f'Absent ({absent})', f'Present ({present})'],
-        autopct='%1.1f%%')
-ax1.set_title("Target Distribution")
+    present = y_true.count(1)
+    absent = y_true.count(0)
+    fig1, ax1 = plt.subplots()
+    ax1.pie([absent, present],
+    labels=[f'Absent ({absent})', f'Present ({present})'],
+    autopct='%1.1f%%')
+    ax1.set_title("Target Distribution")
 
-# --- Confidence Levels Pie Chart ---
-low = sum(c < 0.7 for c in confidences)
-medium = sum(0.7 <= c < 0.9 for c in confidences)
-high = sum(c >= 0.9 for c in confidences)
-fig2, ax2 = plt.subplots()
-ax2.pie([low, medium, high],
-        labels=[f'Low ({low})', f'Medium ({medium})', f'High ({high})'],
-        autopct='%1.1f%%')
-ax2.set_title("Confidence Levels")
+    # --- Confidence Levels Pie Chart ---
+    low = sum(c < 0.7 for c in confidences)
+    medium = sum(0.7 <= c < 0.9 for c in confidences)
+    high = sum(c >= 0.9 for c in confidences)
+    fig2, ax2 = plt.subplots()
+    ax2.pie([low, medium, high],
+    labels=[f'Low ({low})', f'Medium ({medium})', f'High ({high})'],
+    autopct='%1.1f%%')
+    ax2.set_title("Confidence Levels")
 
-# --- Add both charts into existing PDF ---
-pdf.savefig(fig1, bbox_inches="tight")
-pdf.savefig(fig2, bbox_inches="tight")
+    # --- Add both charts into existing PDF ---
+    pdf.savefig(fig1, bbox_inches="tight")
+    pdf.savefig(fig2, bbox_inches="tight")
 
 
     # Spectrum plot
