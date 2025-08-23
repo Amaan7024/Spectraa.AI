@@ -61,7 +61,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     present_count = len(present_files) if present_files else 0
     absent_count = len(absent_files) if absent_files else 0
 
-       # Pie chart + Spectrum plot (side by side)
+         # Pie chart + Spectrum plot (side by side, properly sized)
     if test_fig is not None and (present_count + absent_count > 0):
         # --- Pie Chart ---
         pie_buf = io.BytesIO()
@@ -69,9 +69,9 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
         sizes = [present_count, absent_count]
         colors = ['#66bb6a', '#ef5350']
 
-        fig_pie, ax_pie = plt.subplots()
+        fig_pie, ax_pie = plt.subplots(figsize=(3,3))
         ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90,
-                   colors=colors, shadow=True)
+                   colors=colors, shadow=True, textprops={'color':"black"})
         ax_pie.axis('equal')
 
         fig_pie.savefig(pie_buf, format="png", bbox_inches="tight")
@@ -81,14 +81,24 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
         # --- Spectrum Plot ---
         spec_buf = io.BytesIO()
+        test_fig.set_size_inches(3.5,3)   # shrink spectrum plot
         test_fig.savefig(spec_buf, format="png", bbox_inches="tight")
         spec_buf.seek(0)
         spec_img = ImageReader(spec_buf)
 
-        # --- Place them side by side ---
-        img_w, img_h = 250, 200  # adjust sizes
-        c.drawImage(pie_img, 70, height - 450, width=img_w, height=img_h, mask='auto')
-        c.drawImage(spec_img, 320, height - 450, width=img_w+50, height=img_h, mask='auto')
+        # --- Place them side by side (fit page width) ---
+        img_w, img_h = 220, 180   # resized
+        margin_left = 60
+        spacing = 40
+
+        c.drawImage(pie_img, margin_left, height - 450, width=img_w, height=img_h, mask='auto')
+        c.drawImage(spec_img, margin_left + img_w + spacing, height - 450, width=img_w, height=img_h, mask='auto')
+
+        # Titles above images
+        c.setFont("Helvetica-Bold", 12)
+        c.drawCentredString(margin_left + img_w/2, height - 250, "Data Distribution")
+        c.drawCentredString(margin_left + img_w + spacing + img_w/2, height - 250, "Test Spectrum")
+
 
 
     # Prediction
