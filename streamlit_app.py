@@ -584,6 +584,16 @@ if test_file and "model" in st.session_state:
     st.markdown("---")
     st.subheader("📥 Download Analysis Report")
 
+    # Save pie chart as image
+    pie_path = "pie_chart.png"
+    fig_pie.savefig(pie_path)
+
+    # Add to report
+    report_elements.append(Paragraph("<b>Distribution of Uploaded Samples</b>", style_normal))
+    report_elements.append(Image(pie_path, width=300, height=300))
+    report_elements.append(Spacer(1, 12))
+
+
     if st.button("Generate PDF"):
         pdf_buffer = generate_pdf_report(present_count, absent_count, fig, pred, conf)
         st.download_button(
