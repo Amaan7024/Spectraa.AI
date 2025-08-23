@@ -101,16 +101,20 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
 
 
-        # --- Prediction Section at the very end ---
+            # --- Prediction Section just below the plots ---
     c.setFont("Helvetica-Bold", 16)
-    c.setFillColorRGB(0.1, 0.1, 0.1)  # dark text
+    c.setFillColorRGB(0, 0, 0)  # black text
+
     result_text = "MODEL PREDICTION: " + ("TARGET PRESENT ✅" if pred == 1 else "TARGET ABSENT ❌")
     confidence_text = f"Confidence: {conf:.2%}"
 
-    # Place at bottom of page
-    c.drawCentredString(width / 2, 120, result_text)
+    # Place just below spectrum plot area
+    y_position = height - 520  # adjust relative to spectrum image height
+    c.drawCentredString(width / 2, y_position, result_text)
+
     c.setFont("Helvetica-Bold", 14)
-    c.drawCentredString(width / 2, 100, confidence_text)
+    c.drawCentredString(width / 2, y_position - 20, confidence_text)
+
 
 
     c.save()
