@@ -91,20 +91,6 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
         c.drawImage(spec_img, 320, height - 450, width=img_w+50, height=img_h, mask='auto')
 
 
-
-
-
-    
-    # Spectrum plot
-    if test_fig is not None:
-        img_buf = io.BytesIO()
-        test_fig.savefig(img_buf, format="png", bbox_inches="tight")
-        img_buf.seek(0)
-        img = ImageReader(img_buf)
-        # scale to fit page
-        img_w, img_h = 420, 260
-        c.drawImage(img, 90, height - 500, width=img_w, height=img_h, preserveAspectRatio=True, mask='auto')
-
     # Prediction
     c.setFont("Helvetica-Bold", 14)
     c.drawString(50, height - 200, "Model Prediction:")
