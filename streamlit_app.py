@@ -61,22 +61,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     present_count = len(present_files) if present_files else 0
     absent_count = len(absent_files) if absent_files else 0
 
-    # Pie chart
-    fig_pie, ax_pie = plt.subplots()
-    labels = ['Target Present', 'Target Absent']
-    sizes = [present_count, absent_count]
-    colors = ['#28a745', '#dc3545']  # Green for present, red for absent
-    ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
-    ax_pie.axis('equal')  # Equal aspect ratio makes it a perfect circle
 
-    # Save pie chart as image
-    pie_path = "pie_chart.png"
-    fig_pie.savefig(pie_path)
-
-    # Add to report
-    report_elements.append(Paragraph("<b>Distribution of Uploaded Samples</b>", style_normal))
-    report_elements.append(Image(pie_path, width=300, height=300))
-    report_elements.append(Spacer(1, 12))
 
     
     # Spectrum plot
