@@ -61,8 +61,9 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     present_count = len(present_files) if present_files else 0
     absent_count = len(absent_files) if absent_files else 0
 
-    # Pie chart of data distribution
-    if present_count + absent_count > 0:
+       # Pie chart + Spectrum plot (side by side)
+    if test_fig is not None and (present_count + absent_count > 0):
+        # --- Pie Chart ---
         pie_buf = io.BytesIO()
         labels = ['Target Present', 'Target Absent']
         sizes = [present_count, absent_count]
@@ -70,15 +71,25 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
         fig_pie, ax_pie = plt.subplots()
         ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90,
-        colors=colors, shadow=True)
+                   colors=colors, shadow=True)
         ax_pie.axis('equal')
 
         fig_pie.savefig(pie_buf, format="png", bbox_inches="tight")
-        plt.close(fig_pie)  # close the figure so it doesn’t show in app
+        plt.close(fig_pie)
         pie_buf.seek(0)
+        pie_img = ImageReader(pie_buf)
 
-    pie_img = ImageReader(pie_buf)
-    c.drawImage(pie_img, 90, height - 400, width=300, height=200, mask='auto')
+        # --- Spectrum Plot ---
+        spec_buf = io.BytesIO()
+        test_fig.savefig(spec_buf, format="png", bbox_inches="tight")
+        spec_buf.seek(0)
+        spec_img = ImageReader(spec_buf)
+
+        # --- Place them side by side ---
+        img_w, img_h = 250, 200  # adjust sizes
+        c.drawImage(pie_img, 70, height - 450, width=img_w, height=img_h, mask='auto')
+        c.drawImage(spec_img, 320, height - 450, width=img_w+50, height=img_h, mask='auto')
+
 
 
 
