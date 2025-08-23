@@ -57,6 +57,19 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     c.drawString(70, height - 140, f"Target Present Files: {present_count}")
     c.drawString(70, height - 160, f"Target Absent Files:  {absent_count}")
 
+    # Example counts (you already have present_files and absent_files lists)
+    present_count = len(present_files) if present_files else 0
+    absent_count = len(absent_files) if absent_files else 0
+
+    # Pie chart
+    fig_pie, ax_pie = plt.subplots()
+    labels = ['Target Present', 'Target Absent']
+    sizes = [present_count, absent_count]
+    colors = ['#28a745', '#dc3545']  # Green for present, red for absent
+    ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
+    ax_pie.axis('equal')  # Equal aspect ratio makes it a perfect circle
+
+    
     # Spectrum plot
     if test_fig is not None:
         img_buf = io.BytesIO()
