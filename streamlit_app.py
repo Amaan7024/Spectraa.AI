@@ -69,6 +69,15 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
     ax_pie.axis('equal')  # Equal aspect ratio makes it a perfect circle
 
+    # Save pie chart as image
+    pie_path = "pie_chart.png"
+    fig_pie.savefig(pie_path)
+
+    # Add to report
+    report_elements.append(Paragraph("<b>Distribution of Uploaded Samples</b>", style_normal))
+    report_elements.append(Image(pie_path, width=300, height=300))
+    report_elements.append(Spacer(1, 12))
+
     
     # Spectrum plot
     if test_fig is not None:
@@ -91,47 +100,6 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     buffer.seek(0)
     return buffer
     
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
-from reportlab.lib.styles import getSampleStyleSheet
-import matplotlib.pyplot as plt
-
-def generate_report(present_count, absent_count, test_spectrum_fig, prediction, confidence):
-    report_file = "spectra_report.pdf"
-    doc = SimpleDocTemplate(report_file)
-    styles = getSampleStyleSheet()
-    report_elements = []
-
-    # Title
-    report_elements.append(Paragraph("<b>Spectra Analysis Report</b>", styles['Title']))
-    report_elements.append(Spacer(1, 12))
-
-    # Counts
-    report_elements.append(Paragraph(f"Target Present Samples: {present_count}", styles['Normal']))
-    report_elements.append(Paragraph(f"Target Absent Samples: {absent_count}", styles['Normal']))
-    report_elements.append(Spacer(1, 12))
-
-    # ✅ Generate pie chart inside function
-    fig_pie, ax_pie = plt.subplots()
-    labels = ['Target Present', 'Target Absent']
-    sizes = [present_count, absent_count]
-    colors = ['#28a745', '#dc3545']
-    ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors)
-    ax_pie.axis('equal')
-    
-    pie_path = "pie_chart.png"
-    fig_pie.savefig(pie_path)
-    plt.close(fig_pie)
-
-    report_elements.append(Paragraph("<b>Distribution of Uploaded Samples</b>", styles['Normal']))
-    report_elements.append(Image(pie_path, width=300, height=300))
-    report_elements.append(Spacer(1, 12))
-
-    # Prediction result
-    report_elements.append(Paragraph(f"Prediction: {prediction}", styles['Normal']))
-    report_elements.append(Paragraph(f"Confidence: {confidence:.2%}", styles['Normal']))
-
-    doc.build(report_elements)
-    return report_file
 
 
 import streamlit as st
@@ -626,14 +594,7 @@ if test_file and "model" in st.session_state:
     st.markdown("---")
     st.subheader("📥 Download Analysis Report")
 
-    # Save pie chart as image
-    pie_path = "pie_chart.png"
-    fig_pie.savefig(pie_path)
-
-    # Add to report
-    report_elements.append(Paragraph("<b>Distribution of Uploaded Samples</b>", style_normal))
-    report_elements.append(Image(pie_path, width=300, height=300))
-    report_elements.append(Spacer(1, 12))
+  
 
 
     if st.button("Generate PDF"):
