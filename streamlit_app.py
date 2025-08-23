@@ -62,20 +62,20 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     absent_count = len(absent_files) if absent_files else 0
 
     # Pie chart of data distribution
-if present_count + absent_count > 0:
-    pie_buf = io.BytesIO()
-    labels = ['Target Present', 'Target Absent']
-    sizes = [present_count, absent_count]
-    colors = ['#66bb6a', '#ef5350']
+    if present_count + absent_count > 0:
+        pie_buf = io.BytesIO()
+        labels = ['Target Present', 'Target Absent']
+        sizes = [present_count, absent_count]
+        colors = ['#66bb6a', '#ef5350']
 
-    fig_pie, ax_pie = plt.subplots()
-    ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90,
-    colors=colors, shadow=True)
-    ax_pie.axis('equal')
+        fig_pie, ax_pie = plt.subplots()
+        ax_pie.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90,
+        colors=colors, shadow=True)
+        ax_pie.axis('equal')
 
-    fig_pie.savefig(pie_buf, format="png", bbox_inches="tight")
-    plt.close(fig_pie)  # close the figure so it doesn’t show in app
-    pie_buf.seek(0)
+        fig_pie.savefig(pie_buf, format="png", bbox_inches="tight")
+        plt.close(fig_pie)  # close the figure so it doesn’t show in app
+        pie_buf.seek(0)
 
     pie_img = ImageReader(pie_buf)
     c.drawImage(pie_img, 90, height - 400, width=300, height=200, mask='auto')
