@@ -62,7 +62,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     absent_count = len(absent_files) if absent_files else 0
 
     # Pie chart of data distribution
-     if present_count + absent_count > 0:
+if present_count + absent_count > 0:
     pie_buf = io.BytesIO()
     labels = ['Target Present', 'Target Absent']
     sizes = [present_count, absent_count]
