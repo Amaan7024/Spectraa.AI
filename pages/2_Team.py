@@ -53,7 +53,7 @@ st.markdown(
 )
 
 st.title("👥 Meet the Team")
-st.markdown("We’re a group of passionate researchers, developers, and innovators behind Spectra.AI.")
+
 
 # ----------- Helper function for each member -----------
 def display_member(image_path, name, role, bio, email=None, linkedin=None):
