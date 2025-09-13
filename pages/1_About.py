@@ -161,7 +161,7 @@ This project acknowledges:
 <ul>
 <li><b>RamanNet (2022)</b>: A lightweight CNN for Raman spectral classification</li>
 <li><b>Modified RamanNet (2025)</b>: Upgraded version of RamanNet</li>
-<li><b>Manish Singh Pawar</b>:Project Associate, INST Mohali</li>
+<li><b>Manish Singh Pawar</b>: Project Associate, INST Mohali</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
