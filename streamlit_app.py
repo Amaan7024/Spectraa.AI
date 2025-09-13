@@ -36,29 +36,6 @@ from datetime import datetime
 from datetime import datetime
 import pytz
 
-st.markdown(
-    """
-    <style>
-    .block-container {
-        padding-top: 0rem !important;
-    }
-    .full-width-banner {
-        width: 100vw;
-        height: 250px;
-        background-image: url('banner.png');
-        background-size: cover;
-        background-position: center;
-        margin: 0;
-    }
-    </style>
-    <div class="full-width-banner"></div>
-    """,
-    unsafe_allow_html=True
-)
-
-
-
-
 def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     buffer = io.BytesIO()
     c = canvas.Canvas(buffer, pagesize=letter)
