@@ -95,7 +95,7 @@ st.markdown("<div class='about-container'>", unsafe_allow_html=True)
 st.markdown("""
 <div class='banner'>
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png' alt='Spectra.AI Logo' />
-    <h1>📖 About Spectra.AI</h1>
+    <h1>📖 About Spectral.AI</h1>
 </div>
 """, unsafe_allow_html=True)
 
