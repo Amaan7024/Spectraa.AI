@@ -89,7 +89,7 @@ display_member(
 display_member(
     "team_photos/2.png",
     "Mohd. Amaan Ansari",
-    "Developer",
+    "ML",
     "Intern, INST Mohali",
     
 )
