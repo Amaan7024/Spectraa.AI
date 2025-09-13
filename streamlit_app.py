@@ -199,7 +199,7 @@ st.markdown(
         background-position: center;
         margin-left: -3rem; /* removes Streamlit page padding */
         margin-top: -1rem;
-        margin-bottom: -20rem;
+        margin-bottom: -10rem;
     }
     </style>
     <div class="full-width-banner"></div>
