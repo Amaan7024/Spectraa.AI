@@ -42,7 +42,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
     # Title
     c.setFont("Helvetica-Bold", 18)
-    c.drawCentredString(width / 2, height - 50, "Spectra.AI Analysis Report")
+    c.drawCentredString(width / 2, height - 50, "Spectral.AI Analysis Report")
 
     # Timestamp
     ist = pytz.timezone("Asia/Kolkata")
@@ -175,13 +175,13 @@ import base64
 from PIL import Image
 
 # Load the banner image
-banner = Image.open("LDMD.png")  
+banner = Image.open("INST.LDMD.png")  
 
 # Display as full-width header banner
 st.markdown(
     f"""
     <div style="text-align:center;">
-        <img src="data:image/png;base64,{base64.b64encode(open('LDMDk.png', 'rb').read()).decode()}" 
+        <img src="data:image/png;base64,{base64.b64encode(open('INST.LDMD.png', 'rb').read()).decode()}" 
              style="width:100%; max-height:300px; object-fit:cover; border-radius:12px;" />
     </div>
     """,
@@ -194,7 +194,7 @@ st.markdown(
     .full-width-banner {
         width: 100vw;
         height: 300px;
-        background-image: url('Spectraa.AI/LDMDk.png'); 
+        background-image: url('Spectraa.AI/INST.LDMD.png'); 
         background-size: cover;
         background-position: center;
         margin-left: -3rem; /* removes Streamlit page padding */
