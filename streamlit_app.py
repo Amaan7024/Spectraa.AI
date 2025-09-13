@@ -175,7 +175,7 @@ import base64
 from PIL import Image
 
 # Load the banner image
-banner = Image.open("INST.LDMD.png")  # replace with your image filename
+banner = Image.open("INST.LDMD.png")  
 
 # Display as full-width header banner
 st.markdown(
