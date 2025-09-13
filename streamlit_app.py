@@ -320,7 +320,7 @@ st.markdown(
     }
     </style>
 
-    <div class='header'>🔬 Spectra.AI</div>
+    <div class='header'>🔬 Spectral.AI</div>
 
     """,
     unsafe_allow_html=True
