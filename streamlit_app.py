@@ -182,7 +182,7 @@ st.markdown(
     f"""
     <div style="text-align:center;">
         <img src="data:image/png;base64,{base64.b64encode(open('INST.LDMD.png', 'rb').read()).decode()}" 
-             style="width:100%; max-height:300px; object-fit:cover; border-radius:12px;" />
+             style="width:100%; height:auto; object-fit:contain; border-radius:12px;" />
     </div>
     """,
     unsafe_allow_html=True
