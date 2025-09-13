@@ -192,7 +192,7 @@ st.markdown(
     """
     <style>
     .full-width-banner {
-        width: 20000vw;
+        width: 2000000vw;
         height: 300px;
         background-image: url('Spectraa.AI/INST.LDMD.png'); 
         background-size: cover;
