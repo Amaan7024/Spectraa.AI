@@ -94,21 +94,7 @@ display_member(
     
 )
 
-display_member(
-    "team_photos/3.png",
-    "Manish Singh Pawar",
-    "Lead Data Researcher",
-    "Project Associate, INST Mohali",
-    
-)
 
-display_member(
-    "team_photos/4.png",
-    "Mohd. Zaid Habib",
-    "Lead Analyst",
-    "Student, Panjab University",
-   
-)
 
 
 
