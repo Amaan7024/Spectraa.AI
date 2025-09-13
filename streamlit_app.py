@@ -175,7 +175,7 @@ import base64
 from PIL import Image
 
 # Load the banner image
-banner = Image.open("LDMDk.png")  # replace with your image filename
+banner = Image.open("INST.LDMD.png")  # replace with your image filename
 
 # Display as full-width header banner
 st.markdown(
@@ -423,9 +423,8 @@ st.success(f"Welcome, {st.session_state['current_user']}!")
 
 
 
-# Place your main app logic here
+# main app logic:
 
-# ---------------- RamanNet Model ---------------- #
 class RamanNet(nn.Module):
     def __init__(self, input_length=1000, window_size=50, step=25, n1=32, n2=256, embedding_dim=128, num_classes=2):
         super(RamanNet, self).__init__()
@@ -486,7 +485,7 @@ def preprocess_spectrum(df, target_len=1000):
         return None
 
 # ---------------- Streamlit App ---------------- #
-st.set_page_config(page_title="Spectra.AI", layout="centered")
+st.set_page_config(page_title="Spectral.AI", layout="centered")
 st.title("🧪 Train Spectroscopic Data")
 
 # 🌟 Styled Upload Section
