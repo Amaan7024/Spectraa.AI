@@ -106,7 +106,7 @@ Spectral.AI is an advanced machine learning application purpose-built to train o
 
 # Why Spectra.AI
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("### 🎯 Why Spectra.AI?")
+st.markdown("### 🎯 Why Spectral.AI?")
 st.markdown("""
 <div class='highlight-box'>
 <ul>
@@ -145,6 +145,7 @@ st.markdown("""
 <li>Click <b>Train Model</b> — The model gets traind  and reports accuracy each epoch.It will run for 600 epochs.After training, a message will be displayed indicating that the model is trained.</li>
 <li>Now, In step 2 ,Upload a new test spectrum for prediction. You will see a visual of the test spectrum you are checking.</li>
 <li>Get results with <b>confidence level</b>.</li>
+<li>The result can be downloaded <b>using generate PDF report button.</b>.</li>
 </ol>
 </div>
 """, unsafe_allow_html=True)
