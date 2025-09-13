@@ -20,7 +20,7 @@ st.markdown(
 from PIL import Image
 import os
 
-st.set_page_config(page_title="Spectra.AI - Team", layout="centered")
+st.set_page_config(page_title="Spectral.AI - Team", layout="centered")
 
 # Optional: Match background to main app
 st.markdown(
@@ -52,7 +52,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("👥 Meet the Team")
+st.title("Meet the Team")
 
 
 # ----------- Helper function for each member -----------
