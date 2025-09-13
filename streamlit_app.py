@@ -309,7 +309,7 @@ st.markdown(
     }
     .header {
         text-align: center;
-        font-size:40px;
+        font-size:80px;
         color: #000000;
         font-weight: bold;
     }
