@@ -81,7 +81,7 @@ display_member(
     "team_photos/1.png",
     "Dr. Kiran Shankar Hazra",
     "Supervisor",
-    "Scientist E, INST Mohali",
+    "Scientist 'E', INST Mohali",
     email="kiran@inst.ac.in",
     
 )
