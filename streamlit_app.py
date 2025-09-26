@@ -43,7 +43,7 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
     # Title
     c.setFont("Helvetica-Bold", 18)
-    c.drawCentredString(width / 2, height - 50, "Spectral.AI Analysis Report")
+    c.drawCentredString(width / 2, height - 50, "Spextra.AI Analysis Report")
 
     # Timestamp
     ist = pytz.timezone("Asia/Kolkata")
@@ -486,7 +486,7 @@ def preprocess_spectrum(df, target_len=1000):
         return None
 
 # ---------------- Streamlit App ---------------- #
-st.set_page_config(page_title="Spectral.AI", layout="centered")
+st.set_page_config(page_title="Spextra.AI", layout="centered")
 st.title("🧪 Train Spectroscopic Data")
 
 # 🌟 Styled Upload Section
