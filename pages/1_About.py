@@ -95,18 +95,18 @@ st.markdown("<div class='about-container'>", unsafe_allow_html=True)
 st.markdown("""
 <div class='banner'>
     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png' alt='Spectra.AI Logo' />
-    <h1>📖 About Spectral.AI</h1>
+    <h1>📖 About Spextra.AI</h1>
 </div>
 """, unsafe_allow_html=True)
 
 # About description
 st.markdown("""
-Spectral.AI is an advanced machine learning application purpose-built to train on raw spectral data and accurately differentiate even the most complex and closely resembling spectra. By leveraging state-of-the-art algorithms, it can identify analytes from minute trace-level spectral signatures with exceptional accuracy. Extensively validated in laboratory settings, Spectral.AI has demonstrated outstanding performance in analyzing Raman signals, reliably distinguishing target molecular signatures within highly complex systems. It has been successfully optimized for multiple biomarkers and achieved detection limits down to ~100 fM concentrations. Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation
+Spextra.AI is an advanced machine learning application purpose-built to train on raw spectral data and accurately differentiate even the most complex and closely resembling spectra. By leveraging state-of-the-art algorithms, it can identify analytes from minute trace-level spectral signatures with exceptional accuracy. Extensively validated in laboratory settings, Spectral.AI has demonstrated outstanding performance in analyzing Raman signals, reliably distinguishing target molecular signatures within highly complex systems. It has been successfully optimized for multiple biomarkers and achieved detection limits down to ~100 fM concentrations. Highly adaptable, the platform can be trained for a wide range of analytes and applied across multiple spectroscopic techniques. As the first application of its kind to integrate machine learning directly with raw spectroscopic data, Spectral.AI sets a new benchmark for precision analytics and scientific innovation
 """)
 
-# Why Spectra.AI
+# Why Spextra.AI
 st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("### 🎯 Why Spectral.AI?")
+st.markdown("### 🎯 Why Spextra.AI?")
 st.markdown("""
 <div class='highlight-box'>
 <ul>
@@ -142,7 +142,7 @@ st.markdown("""
 <ol>
 <li>Firstly Upload <b>spectra files</b> for both Target Present and Target Absent classes, i.e., upload some spectra in which the target is present and some in which spectra is absent.</li>
 <li>The data can be in .csv format. In each section you can upload a maximum of 150 files. More than 100 files in each section are preferred for better results.</li>
-<li>Click <b>Train Model</b> — The model gets traind  and reports accuracy each epoch.It will run for 600 epochs.After training, a message will be displayed indicating that the model is trained.</li>
+<li>Click <b>Train Model</b> — The model gets trained  and reports accuracy each epoch.It will run for 600 epochs.After training, a message will be displayed indicating that the model is trained.</li>
 <li>Now, In step 2 ,Upload a new test spectrum for prediction. You will see a visual of the test spectrum you are checking.</li>
 <li>Get results with <b>confidence level</b>.</li>
 <li>The result can be downloaded <b>using generate PDF report button.</b>.</li>
