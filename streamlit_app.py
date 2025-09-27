@@ -129,33 +129,6 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     return buffer
 
 
-import streamlit as st
-
-# Hide Streamlit default menu and footer
-hide_st_style = """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-
-    /* Replace "streamlit app" text in sidebar */
-    section[data-testid="stSidebar"] .css-1rs6os {
-        visibility: hidden;
-        position: relative;
-    }
-    section[data-testid="stSidebar"] .css-1rs6os::before {
-        content: "Spextra.AI";
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 20px;
-        font-weight: bold;
-        color: #0dcaf0;
-    }
-    </style>
-"""
-st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
     
