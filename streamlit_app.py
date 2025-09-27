@@ -132,28 +132,26 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
 
 import streamlit as st
 
-# Custom CSS to replace "streamlit app" with "Spextra.AI"
-st.markdown(
-    """
+# Remove Streamlit default menu and footer
+hide_st_style = """
     <style>
-    /* Hide default Streamlit app text */
-    .css-1rs6os.edgvbvh3 {
-        visibility: hidden;
-    }
-    /* Add custom branding */
-    .css-1rs6os.edgvbvh3::before {
-        content: "Spextra.AI";
-        visibility: visible;
-        display: block;
-        font-size: 20px;
-        font-weight: bold;
-        color: #0dcaf0; /* Neon blue color */
-        margin-left: 5px;
-    }
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
     </style>
-    """,
-    unsafe_allow_html=True
-)
+"""
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+# Sidebar custom branding
+with st.sidebar:
+    st.markdown(
+        """
+        <h2 style='text-align: center; color: #0dcaf0;'>
+            Spextra.AI
+        </h2>
+        """,
+        unsafe_allow_html=True
+    )
 
     
 
