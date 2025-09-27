@@ -127,6 +127,34 @@ def generate_pdf_report(present_count, absent_count, test_fig, pred, conf):
     c.save()
     buffer.seek(0)
     return buffer
+
+
+
+import streamlit as st
+
+# Custom CSS to replace "streamlit app" with "Spextra.AI"
+st.markdown(
+    """
+    <style>
+    /* Hide default Streamlit app text */
+    .css-1rs6os.edgvbvh3 {
+        visibility: hidden;
+    }
+    /* Add custom branding */
+    .css-1rs6os.edgvbvh3::before {
+        content: "Spextra.AI";
+        visibility: visible;
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        color: #0dcaf0; /* Neon blue color */
+        margin-left: 5px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
     
 
 
