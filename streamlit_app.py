@@ -176,13 +176,13 @@ import base64
 from PIL import Image
 
 # Load the banner image
-banner = Image.open("spextra.png")  
+banner = Image.open("spextra.ai.png")  
 
 # Display as full-width header banner
 st.markdown(
     f"""
     <div style="text-align:center;">
-        <img src="data:image/png;base64,{base64.b64encode(open('spextra.png', 'rb').read()).decode()}" 
+        <img src="data:image/png;base64,{base64.b64encode(open('spextra.ai.png', 'rb').read()).decode()}" 
              style="width:150%; max-height:310px; object-fit:cover; border-radius:12px;" />
     """,
     unsafe_allow_html=True
@@ -194,7 +194,7 @@ st.markdown(
     .full-width-banner {
         width: 2000000vw;
         height: 300px;
-        background-image: url('Spectraa.AI/spextra.png'); 
+        background-image: url('Spectraa.AI/spextra.ai.png'); 
         background-size: cover;
         background-position: center;
         margin-left: -3rem; /* removes Streamlit page padding */
